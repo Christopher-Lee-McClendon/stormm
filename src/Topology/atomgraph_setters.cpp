@@ -757,14 +757,9 @@ void AtomGraph::setImplicitSolventModel(const ImplicitSolventModel igb_in,
       }
       switch (policy) {
       case ExceptionResponse::DIE:
-        rtErr("The \"neck\" GB models are incompatible with atomic radii smaller than 1.0 "
-              "Anstroms or larger than 2.0 Angstroms, which were found in topology " +
-              getBaseName(source) + ".  To automatically correct this situation (but use "
-              "different parameters from what is written in the file) re-run with '-warn' as a "
-              "command line argument.", "AtomGraph", "setImplicitSolventModel");
       case ExceptionResponse::WARN:
         rtWarn("The \"neck\" GB models are incompatible with atomic radii smaller than 1.0 "
-               "Anstroms or larger than 2.0 Angstroms, which were found in topology " +
+               "Angstroms or larger than 2.0 Angstroms, which were found in topology " +
                getBaseName(source) + ".  " + correction, "AtomGraph", "setImplicitSolventModel");
         break;
       case ExceptionResponse::SILENT:
